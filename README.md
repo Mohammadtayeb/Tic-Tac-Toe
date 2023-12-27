@@ -13,3 +13,4 @@ Then you should run the development server by command bellow:
 *python manage.py runserver*
 
 After running the project visit *http://localhost:8000* in your browser.
+![Game Board](https://github.com/Mohammadtayeb/Tic-Tac-Toe/assets/68399803/67532b5b-e146-4c94-8ce5-a8e251bb8f6e)
