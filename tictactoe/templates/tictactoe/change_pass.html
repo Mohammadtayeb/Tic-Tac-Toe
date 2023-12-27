@@ -1,0 +1,21 @@
+{% extends 'tictactoe/layout.html' %}
+
+{% block body %}
+
+    {% if messages %}
+        {% for message in messages %}
+            <p class="{{message.tags}}">{{message}}</p>
+        {% endfor %}
+    {% endif %}    
+
+    <h2 id="title">Change Password</h2>
+    <div class="container" id="change_pass_div">
+        <form method="post" action="#">
+            {% csrf_token %}
+            <div class="form-group">
+                {{form}}
+            </div>
+            <input type="submit" value="Confirm" class="btn btn-success">
+        </form>
+    </div>
+{% endblock %}

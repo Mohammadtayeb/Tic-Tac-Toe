@@ -1,0 +1,15 @@
+{% extends 'tictactoe/layout.html' %}
+
+{% block body %}
+    {% if user.is_authenticated %}
+        <p id="loged_as">You are logged in as {{user.username}}.</p>
+    {% endif %}
+    <P id="about_contact"> 
+        This is an entertainment website made for playing game. Here you can play Tic Tac Toe game whether with your own or with your friends.
+        Every user should have a user account to play the game. We are everytime here for you. In case of any suggestion or idea please contact as
+        on: <br>
+        Gmail: <b>mohammadtayebbayani@gmail.com</b><br>
+        Instagram: <b>Tayeb Bayani</b><br>
+        Git Hub: <b>Mohammadtayeb</b> 
+    </P>
+{% endblock %}

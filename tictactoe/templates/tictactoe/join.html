@@ -1,0 +1,16 @@
+{% extends 'tictactoe/layout.html' %}
+{% block body %}
+
+    {% if messages %}
+        {% for message in messages %}
+            <p class="{{message.tags}}">{{message}}</p>
+        {% endfor %}
+    {% endif %}
+
+    <form method="post" id="join_form">
+        {% csrf_token %}
+        <label>Please enter the room number: </label>
+        <input type="number" name="room_code" id="join_input" class="form-group">
+        <button class="btn btn-warning" id="join_submit">Join</button>
+    </form>
+{% endblock %}

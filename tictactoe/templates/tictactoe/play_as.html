@@ -1,0 +1,15 @@
+{% extends 'tictactoe/layout.html' %}
+{% block body %}
+
+    <h2 id="title">Tic Tac Toe</h2>
+    <div class="container">
+        <form method="post" action="{% url 'computer' %}">
+            {% csrf_token %}
+            <div class="form-group">
+                {{form}}
+            </div>
+            <input type="submit" class="btn btn-success" value="Start Play">
+        </form>
+    </div>
+
+{% endblock %}

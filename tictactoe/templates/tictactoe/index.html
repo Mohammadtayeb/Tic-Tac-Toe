@@ -1,0 +1,47 @@
+{% extends 'tictactoe/layout.html' %}
+
+{% block body %}
+
+    <nav class="navbar navbar-light bg-light navbar-expand-lg">
+        <a href="{% url 'enter' %}" class="navbar-brand">Play With Friends</a>
+        <button class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse" class="nounderline">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav ml-auto">
+                <li class="navbar-item">
+                    <a href="{% url 'computer' %}" class="nav-link">Play With Computer</a>
+                </li>
+                <li class="navbar-item">
+                    <a href="{% url 'about_contact' %}" class="nav-link">About & Contact</a>
+                </li>
+                {% if user.is_authenticated %}
+                    <li class="navbar-item">
+                        <a href="{% url 'log_out' %}" class="nav-link">Log Out</a>
+                    </li>
+                    <li class="navbar-item">
+                        <a href="{% url 'change_password' %}" class="nav-link">Change Password</a>
+                    </li>
+                {% else %}
+                    <li class="navbar-item">
+                        <a href="{% url 'log_in' %}" class="nav-link">Log In</a>
+                    </li>
+                    <li class="navbar-item">
+                        <a href="{% url 'register' %}" class="nav-link"><span class="glyphicon glyphicon-user"></span>Sign In</a>
+                    </li>
+                {% endif %}
+            </ul>
+        </div>
+    </nav>
+
+    {% if messages %}
+        {% for message in messages %}
+            <p class="{{message.tags}}">{{message}}</p>
+        {% endfor %}
+    {% endif %}
+
+    <div id="index_page">
+        <p class="motto">Life is a game!</p>
+        <p class="motto">Play and win.</p>
+    </div>
+{% endblock %}

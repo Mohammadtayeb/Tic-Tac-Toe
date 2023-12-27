@@ -1,0 +1,22 @@
+{% extends 'tictactoe/layout.html' %}
+{% block body %}
+    
+    {% if messages %}
+        {% for message in messages %}
+            <p class="{{message.tags}}">{{message}}</p>
+        {% endfor %}
+    {% endif %}
+
+    <h2 id="title">Registration Form</h2>
+    <div class="container">
+        <form action="{% url 'register' %}" method="post">
+            {% csrf_token %}
+            <div class="form-group">
+                {{form}}
+            </div>
+            <input type="submit" value="Register" class="btn btn-success">
+        </form>
+        already have an account? Here <a href="{% url 'log_in' %}" id="log_in">Log In</a>
+
+    </div>
+{% endblock %}
